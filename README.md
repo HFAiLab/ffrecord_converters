@@ -117,8 +117,7 @@ mm converter 中目前支持了 mmdet3d 的数据自动转换为 FFRecord。转�
 ### 第一步：转换原始数据为 FFRcord 格式
 脚本会将 mmdet3d 所需要的图像或者点云数据，通过 bytes 的数据格式，保存为FFRecord文件。
 ```
-git clone ssh://git@gitlab.high-flyer.cn:10022/xiao.bi/mmconverter.git
-cd mmconverter
+cd mm_converter
 python mmdet3dconverter.py [config_file] [out_dir] [dump_key]
 ```
 - config_file 为训练时使用的 mmdet3d config 文件
