@@ -80,6 +80,7 @@ with open(img_file, "rb") as fp:
 如果需要转换的数据格式与 HFai 支持的数据格式区别较大
 ，则可以使用通用数据集转换脚本进行转换，通用数据转换脚本使用方法如下：
 ```
+cd general_converter
 python general_converter.py {dataset.py} {input_dir} {cvt_name}
 ```
 
