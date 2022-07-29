@@ -1,6 +1,17 @@
 # FFRecord 转换指引
 
-[TOC]
+- [FFRecord 转换指引](#ffrecord-转换指引)
+  - [**为什么要转换为 FFRecord ?**](#为什么要转换为-ffrecord-)
+  - [**FFRecord 性能如何 ?**](#ffrecord-性能如何-)
+  - [**FFRecord 转换规则**](#ffrecord-转换规则)
+    - [**转换文件数量和大小**](#转换文件数量和大小)
+    - [**转换方式参考**](#转换方式参考)
+  - [**现有数据转换方法 -- dataset converter**](#现有数据转换方法----dataset-converter)
+  - [**私有数据转换方法 -- general converter**](#私有数据转换方法----general-converter)
+    - [`dataset.py` 转换所需要的函数定义](#datasetpy-转换所需要的函数定义)
+  - [**MMDET3D 转换方法 -- mm converter**](#mmdet3d-转换方法----mm-converter)
+    - [**第一步：转换原始数据为 FFRcord 格式**](#第一步转换原始数据为-ffrcord-格式)
+    - [**第二步：Load FFRecord 数据**](#第二步load-ffrecord-数据)
 
 
 ## **为什么要转换为 FFRecord ?**
