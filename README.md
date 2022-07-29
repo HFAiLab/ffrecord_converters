@@ -8,7 +8,7 @@
     - [**转换方式参考**](#转换方式参考)
   - [**现有数据转换方法 -- dataset converter**](#现有数据转换方法----dataset-converter)
   - [**私有数据转换方法 -- general converter**](#私有数据转换方法----general-converter)
-    - [`dataset.py` 转换所需要的函数定义](#datasetpy-转换所需要的函数定义)
+    - [dataset.py 转换所需要的函数定义](#datasetpy-转换所需要的函数定义)
   - [**MMDET3D 转换方法 -- mm converter**](#mmdet3d-转换方法----mm-converter)
     - [**第一步：转换原始数据为 FFRcord 格式**](#第一步转换原始数据为-ffrcord-格式)
     - [**第二步：Load FFRecord 数据**](#第二步load-ffrecord-数据)
@@ -87,7 +87,7 @@ python general_converter.py {dataset.py} {input_dir} {cvt_name}
 - `input_dir`：原始数据路径
 - `cvt_name`：转换后 FFRecord 数据目录
 
-### `dataset.py` 转换所需要的函数定义
+### dataset.py 转换所需要的函数定义
 
 `dataset.py` 中除了包括一个 `torch.utils.data.Dataset` 类型的类定义，还需要包括三个额外的函数：
 
@@ -109,7 +109,7 @@ python general_converter.py {dataset.py} {input_dir} {cvt_name}
 - 目的：通过该函数获得数据集的 meta 数据，General Converter 会将返回的元数据保存为 `meta.pkl`
 - 函数定义位置：`torch.utils.data.Dataset` 的类函数
 
-示例参考 [imagenet_dataset.py](general_converter/imagenet_dataset.py) 或者 [coco_dataset.py](dataset_converter/coco_dataset.py)
+示例参考 [imagenet_dataset.py](general_converter/imagenet_dataset.py) 或者 [coco_dataset.py](general_converter/coco_dataset.py)
 
 ## **MMDET3D 转换方法 -- mm converter**
 mm converter 中目前支持了 mmdet3d 的数据自动转换为 FFRecord。转换过程包括两个步骤，第一步是将原始数据自动转换为 FFRecord 数据格式，第二步是通过修改配置来在训练过程中载入 FFRecord 数据。
