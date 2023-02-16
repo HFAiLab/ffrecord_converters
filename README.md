@@ -144,14 +144,9 @@ file_client_args=dict(
 
 完成上述两个步骤后即可使用 FFRecord 数据进行训练，以 BEVFormer 训练为例，采用 10 节点，每个节点 8 台 GPU，每个 GPU 的 batch size 为 1 进行训练时间测试。
 
-<!-- |  BEVFORMER | 数据读取+处理耗时| 单Iter耗时| 训练总耗时 |
-|  ----  | ----  | --- | --- |
-|原始数据|	50th iter: 2.63s<br>others: 0.219s	|50th iter: 4.618<br>others: 2.267|	6.46h|
-|FFRecord<br>单条 sample 多摄像头分开读| 50th iter: 2.279<br>others: 0.16| 50th iter: 4.159<br>others: 2.00| 5.3h|
-|FFRecord<br>单条 sample 多摄像头同时读|50th iter: 2.22<br>others: 0.15	|50th iter: 4.06<br>others: 1.98	|5.2h| -->
-
-|  BEVFORMER | 训练总耗时 |
-|  ----   | --- |
-|原始数据|	6.46h|
-|FFRecord<br>单条 sample 多摄像头分开读| 5.3h|
-|FFRecord<br>单条 sample 多摄像头同时读|5.2h|
+| 模型 | 并行 GPU 数量 | 训练耗时| 训练耗时（FFRecord）| NDS | mAP |
+| :----: | :----: | :----: | :----: | :----: | :----: |
+| BEVFormer Base  | 1      | ~ 14 天 20 小时 | ~ 13 天 12 小时  | -   | -  |
+| BEVFormer Base  | 8      | ~ 44 小时 24 分 | ~ 39 小时 12 分  | 0.517   | 0.416  |
+| BEVFormer Base  | 80     | 6 小时 28 分    | 6 小时           | 0.498   | 0.391  |
+| BEVFormer Base  | 160    | 3 小时 12 分    | 3 小时 10 分     | 0.490   | 0.389  |
